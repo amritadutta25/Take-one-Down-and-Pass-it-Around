@@ -21,7 +21,7 @@ app.get("/:number_of_bottles", (req, res) => {
     // getting the number of bottles on the wall from URL param
     const bottleNum = req.params.number_of_bottles
 
-    // number of bottles left to be taken down
+    // number of bottles left after 1 bottle is taken down
     const oneLessBottle = bottleNum - 1
 
     // case when bottles are left to be taken down
@@ -29,7 +29,7 @@ app.get("/:number_of_bottles", (req, res) => {
         res.send(`<h1>${bottleNum} Bottles of beer on the wall</h1>
                  <a href="./${oneLessBottle}">take one down, pass it around</a>`)
     }
-    // cade when 0 bottles left to be taken down, we start over
+    // case when 0 bottles left to be taken down, we start over
     else {
         res.send(`<h1>${bottleNum} Bottles of beer on the wall</h1>
         <a href="./">Start over</a>`)
